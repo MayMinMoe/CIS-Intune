@@ -1,0 +1,11 @@
+image: python:3.11
+
+stages:
+  - test
+
+install_and_run:
+  stage: test
+  script:
+    - python -m pip install --upgrade pip
+    - pip install -r requirements.txt
+    - python cis_benchmark_converter.py -i input.pdf -o output.xlsx -f excel --start_page 10
